@@ -36,6 +36,7 @@ class Church < ActiveRecord::Base
     self.people.where(:member_type => 'Member').order("sort_name asc")
   end
 
+  #Moved members are marked as 'Non-Attending'
   def non_attending_members
     self.people.where(:member_type => 'Non-Attending').order("sort_name asc")
   end
