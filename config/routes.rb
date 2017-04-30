@@ -1,6 +1,13 @@
 Churchdirectory::Application.routes.draw do
   
   devise_for :users
+    # API definition
+    namespace :api, defaults: { format: :json } do
+      # list resources below
+      resources :churches, :only => [:show]
+      resources :members, :only => [:show]
+    end
+
 
   root :to => 'churches#index'
   

@@ -32,6 +32,9 @@ gem 'aws-sdk'
 gem 'geocoder' 
 gem 'devise'
 
+#for creating an api
+gem 'active_model_serializers'
+
 group :development, :test do
   gem 'capistrano'
   gem 'capistrano_colors'
