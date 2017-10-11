@@ -29,7 +29,7 @@ class Church < ActiveRecord::Base
   end
   
   def members
-    self.people.where(:member_type => ['Member', 'Non-Attending']).order("sort_name asc")
+    self.people.where(:member_type => ['Member', 'Out-Of-Area']).order("sort_name asc")
   end
 
   def attending_members
@@ -38,7 +38,7 @@ class Church < ActiveRecord::Base
 
   #Moved members are marked as 'Non-Attending'
   def non_attending_members
-    self.people.where(:member_type => 'Non-Attending').order("sort_name asc")
+    self.people.where(:member_type => 'Out-Of-Area').order("sort_name asc")
   end
 
   def sorted_households
